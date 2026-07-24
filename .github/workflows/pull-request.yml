@@ -10,9 +10,9 @@ jobs:
     name: Unit Tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           key: maven-test-${{ hashFiles('**/pom.xml') }}
           path: ~/.m2/repository
@@ -22,7 +22,7 @@ jobs:
 
       - run: mvn --non-recursive wrapper:wrapper -Dmaven=3.9.6
       - name: Set up Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           distribution: 'zulu'
           java-version: 17
@@ -36,9 +36,9 @@ jobs:
   enforcer:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           key: maven-enforcer-${{ hashFiles('**/pom.xml') }}
           path: ~/.m2/repository
@@ -48,7 +48,7 @@ jobs:
 
       - run: mvn --non-recursive wrapper:wrapper -Dmaven=3.9.6
       - name: Set up Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           distribution: 'zulu'
           java-version: 17
@@ -64,9 +64,9 @@ jobs:
   dependency:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           key: maven-dependency-${{ hashFiles('**/pom.xml') }}
           path: ~/.m2/repository
@@ -76,7 +76,7 @@ jobs:
 
       - run: mvn --non-recursive wrapper:wrapper -Dmaven=3.9.6
       - name: Set up Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           distribution: 'zulu'
           java-version: 17
@@ -96,9 +96,9 @@ jobs:
         java-version: [17, 21, 24]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           key: maven-test-no-p2-${{ hashFiles('**/pom.xml') }}
           path: ~/.m2/repository
@@ -109,7 +109,7 @@ jobs:
 
       - run: mvn --non-recursive wrapper:wrapper -Dmaven=3.9.6
       - name: Set up Java ${{ matrix.java-version }}
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           distribution: 'zulu'
           java-version: ${{ matrix.java-version }}
@@ -125,9 +125,9 @@ jobs:
     name: Unit Test Early Access
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           key: maven-test-early-access-${{ hashFiles('**/pom.xml') }}
           path: ~/.m2/repository
@@ -137,7 +137,7 @@ jobs:
             maven-
 
       - name: Download JDK 25 from jdk.java.net
-        uses: oracle-actions/setup-java@v1
+        uses: oracle-actions/setup-java@fff43251af9936a0e6a4d5d0946e14f1680e9b6b # v1.5.0
         id: download-jdk
         with:
           website: jdk.java.net
@@ -159,9 +159,9 @@ jobs:
     name: Acceptance Tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           key: maven-acceptance-test-${{ hashFiles('**/pom.xml') }}
           path: ~/.m2/repository
@@ -172,7 +172,7 @@ jobs:
 
       - run: mvn --non-recursive wrapper:wrapper -Dmaven=3.9.6
       - name: Set up Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           distribution: 'zulu'
           java-version: 17
@@ -187,9 +187,9 @@ jobs:
     name: Performance Tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           key: maven-performance-test-${{ hashFiles('**/pom.xml') }}
           path: ~/.m2/repository
@@ -200,7 +200,7 @@ jobs:
 
       - run: mvn --non-recursive wrapper:wrapper -Dmaven=3.9.6
       - name: Set up Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           distribution: 'zulu'
           java-version: 17
@@ -215,10 +215,10 @@ jobs:
     name: Checkstyle
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       - run: mvn --non-recursive wrapper:wrapper -Dmaven=3.9.6
       - name: Set up Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           distribution: 'zulu'
           java-version: 17
@@ -231,9 +231,9 @@ jobs:
     name: Javadoc 17
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           key: maven-javadoc-${{ hashFiles('**/pom.xml') }}
           path: ~/.m2/repository
@@ -243,7 +243,7 @@ jobs:
 
       - run: mvn --non-recursive wrapper:wrapper -Dmaven=3.9.6
       - name: Set up Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           distribution: 'zulu'
           java-version: 17
@@ -265,9 +265,9 @@ jobs:
     name: Javadoc Early Access
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           key: maven-javadoc-ea-${{ hashFiles('**/pom.xml') }}
           path: ~/.m2/repository
@@ -278,7 +278,7 @@ jobs:
 
       - run: mvn --non-recursive wrapper:wrapper -Dmaven=3.9.6
       - name: Download JDK 25 from jdk.java.net
-        uses: oracle-actions/setup-java@v1
+        uses: oracle-actions/setup-java@fff43251af9936a0e6a4d5d0946e14f1680e9b6b # v1.5.0
         id: download-jdk
         with:
           website: jdk.java.net
